@@ -2,17 +2,17 @@
 
 from setuptools import setup
 
-from myBlanky import _version
+from my_blanky import version
 
 setup(name="myBlanky",
-      version=_version.__version__,
+      version=version.get_version(),
       description="Creates blank project structures for various projects. Get building faster!",
       long_description=open("README.md").read(),
       author="Levi Bostian",
       author_email="levi.bostian@gmail.com",
       url="https://github.com/levibostian/myBlanky",
       license="MIT",
-      packages=["myBlanky"],
+      packages=["my_blanky"],
       keywords = "blanky myblanky productivity structure",
-      entry_points={"console_scripts": ["myblanky = myBlanky.myblanky:main"]},
+      entry_points={"console_scripts": ["myblanky = my_blanky.my_blanky:main"]},
       install_requires=['docopt==0.6.1'])

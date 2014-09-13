@@ -12,4 +12,5 @@ script:
   - python setup.py install
   - myblanky -v
   - myblanky --help
-  - myblanky list
+notifications:
+  email: false
