@@ -17,7 +17,7 @@ Options:
 import sys
 import os
 from docopt import docopt
-from myBlanky import _version
+from my_blanky import _version
 
 
 def main(arguments):

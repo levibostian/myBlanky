@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-from myBlanky import _version
+from my_blanky import _version
 
 setup(name="myBlanky",
       version=_version.__version__,
@@ -12,7 +12,7 @@ setup(name="myBlanky",
       author_email="levi.bostian@gmail.com",
       url="https://github.com/levibostian/myBlanky",
       license="MIT",
-      packages=["myBlanky"],
+      packages=["my_blanky"],
       keywords = "blanky myblanky productivity structure",
-      entry_points={"console_scripts": ["myblanky = myBlanky.myblanky:main"]},
+      entry_points={"console_scripts": ["myblanky = my_blanky.my_blanky:main"]},
       install_requires=['docopt==0.6.1'])
