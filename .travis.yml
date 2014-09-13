@@ -1,0 +1,15 @@
+language: python
+python:
+  - "2.7"
+env:
+  global:
+    - NOTHING_HERE_SO_FAR=""
+# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install:
+  - pip install -q docopt==0.6.1
+# command to run tests, e.g. python setup.py test
+script:
+  - python setup.py install
+  - myblanky -v
+  - myblanky --help
+  - myblanky list
