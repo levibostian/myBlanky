@@ -17,10 +17,15 @@ Options:
 import sys
 import os
 from docopt import docopt
-from my_blanky import _version
+from version import get_version
 
 
-def main(arguments):
+def main():
+    cmd_args = docopt(__doc__, version=get_version())
+    my_blanky(cmd_args)
+
+
+def my_blanky(arguments):
 
     if arguments['blanky']:
         blanky = arguments['blanky']
@@ -38,6 +43,4 @@ def main(arguments):
 
 
 if __name__ == '__main__':
-    cmd_args = docopt(__doc__, version=_version)
-
-    main(cmd_args)
+    main()

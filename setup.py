@@ -2,10 +2,10 @@
 
 from setuptools import setup
 
-from my_blanky import _version
+from my_blanky import version
 
 setup(name="myBlanky",
-      version=_version.__version__,
+      version=version.get_version(),
       description="Creates blank project structures for various projects. Get building faster!",
       long_description=open("README.md").read(),
       author="Levi Bostian",
