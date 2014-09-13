@@ -1,5 +1,6 @@
 myBlanky
 ========
+[![Build Status](https://travis-ci.org/levibostian/myBlanky.svg?branch=fix-travis)](https://travis-ci.org/levibostian/myBlanky)
 
 Copy blank project structures for various projects. Get building faster!
 
