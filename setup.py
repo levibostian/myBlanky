@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from setuptools import setup
-
 from my_blanky import version
 
 setup(name="myBlanky",
@@ -13,8 +12,6 @@ setup(name="myBlanky",
       url="https://github.com/levibostian/myBlanky",
       license="MIT",
       packages=["my_blanky"],
-      data_files=[('', ['blankys/*'])],
-      zip_safe=False,
       keywords = "blanky myblanky productivity structure",
       entry_points={"console_scripts": ["myblanky = my_blanky.my_blanky:main"]},
       install_requires=['docopt==0.6.1'])

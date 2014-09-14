@@ -1,4 +1,7 @@
 .idea/
+myBlanky-*
+myBlanky.egg*
+dist*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
