@@ -15,9 +15,38 @@ Options:
 """
 
 import sys
-import os
+import shutil
 from docopt import docopt
 from version import get_version
+from file_system_util import *
+
+
+def get_available_blanky_names():
+    parent_dir_directories = []
+    for item in os.listdir(get_parent_dir_path()):
+        if not os.path.isfile(item):
+            if not item.startswith('.') and item != get_current_dir_name():
+                parent_dir_directories.append(item)
+
+    return parent_dir_directories
+
+
+def is_blanky_available(blank_name):
+    return blank_name in get_available_blanky_names()
+
+
+def copy_blanky_to_destination(blanky_name, dest_path):
+    try:
+        shutil.copytree(os.path.join(get_parent_dir_path(), blanky_name), dest_path)
+    except shutil.Error as e:
+        return e
+
+
+def get_printable_blankys_list():
+    blank_list = ""
+    for blanky in get_available_blanky_names():
+        blank_list += blanky + "\n"
+    return blank_list[:-1]
 
 
 def main():
@@ -30,13 +59,25 @@ def my_blanky(arguments):
     if arguments['blanky']:
         blanky = arguments['blanky']
         if is_blanky_available(blanky):
-            copy_blanky_to_destination(blanky)
+            dir_to_copy_to = ""
+            if arguments['dir'] and os.path.isdir(arguments['dir']):
+                dir_to_copy_to = arguments['dir']
+            else:
+                dir_to_copy_to = get_current_dir_path()
+            try:
+                copy_blanky_to_destination(blanky, dir_to_copy_to)
+            except shutil.Error as e:
+                print("You cannot copy the same directory.")
+                sys.exit(1)
+            except OSError as e:
+                print("Directory does not exist.")
+                sys.exit(1)
         else:
             print("Given blanky: %s name not available. Choose from following:")
-            print_blankys_list()
+            get_printable_blankys_list()
 
     elif arguments['list']:
-        print_blankys_list()
+        get_printable_blankys_list()
 
     else:
         print(__doc__)
