@@ -60,7 +60,7 @@ def main():
 
 def my_blanky(arguments):
 
-    if arguments['blanky']:
+    if 'blanky' in arguments:
         blanky = arguments['blanky']
         if is_blanky_available(blanky):
             destination_dir = arguments['dir']
@@ -84,7 +84,7 @@ def my_blanky(arguments):
             print("Given blanky: %s name not available. Choose from following:")
             get_printable_blankys_list()
 
-    elif arguments['list']:
+    elif 'list' in arguments:
         get_printable_blankys_list()
 
     else:
