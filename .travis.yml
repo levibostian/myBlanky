@@ -1,14 +1,14 @@
 language: python
 python:
-  - "2.7"
+  - "3.4"
 env:
   global:
     - NOTHING_HERE_SO_FAR=""
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
   - pip install -q docopt==0.6.1
-  - python setup.py sdist --formats=zip -k
-  - find ./dist -iname "*.zip" -print0 | xargs -0 pip install
+  - python3 setup.py sdist
+  - find ./dist -iname "*.tar.gz" -print0 | xargs -0 pip install
 # command to run tests, e.g. python setup.py test
 script:
   - myblanky -v
