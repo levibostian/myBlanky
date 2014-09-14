@@ -9,7 +9,7 @@ import os
 
 
 def get_current_dir_name():
-    return get_current_dir_path().split('/')[-1]
+    return get_current_dir_path().split(os.sep)[-1]
 
 
 def get_current_dir_path():
@@ -21,4 +21,4 @@ def get_parent_dir_path():
 
 
 def get_parent_dir_name():
-    return get_parent_dir_path().split('/')[-1]
+    return get_parent_dir_path().split(os.sep)[-1]

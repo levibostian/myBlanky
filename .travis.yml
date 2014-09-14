@@ -12,5 +12,9 @@ script:
   - python setup.py install
   - myblanky -v
   - myblanky --help
+  - myblanky list
+  - mkdir "test"
+  - myblanky --blanky=bootstrap --dir=test
+  - ls test
 notifications:
   email: false

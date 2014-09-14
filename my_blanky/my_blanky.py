@@ -49,6 +49,10 @@ def get_printable_blankys_list():
     return blank_list[:-1]
 
 
+def get_absolute_path_from_relative(dir_name):
+    return os.path.join(get_current_dir_path(), dir_name)
+
+
 def main():
     cmd_args = docopt(__doc__, version=get_version())
     my_blanky(cmd_args)
@@ -59,6 +63,10 @@ def my_blanky(arguments):
     if arguments['blanky']:
         blanky = arguments['blanky']
         if is_blanky_available(blanky):
+            destination_dir = arguments['dir']
+            if not destination_dir.startswith(os.sep):
+                destination_dir = get_absolute_path_from_relative(destination_dir)
+
             dir_to_copy_to = ""
             if arguments['dir'] and os.path.isdir(arguments['dir']):
                 dir_to_copy_to = arguments['dir']
