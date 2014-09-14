@@ -54,8 +54,18 @@ def get_absolute_path_from_relative(dir_name):
 
 
 def main():
-    cmd_args = docopt(__doc__, version=get_version())
-    my_blanky(cmd_args)
+    # cmd_args = docopt(__doc__, version=get_version())
+    # my_blanky(cmd_args)
+    print("current dir path: " + get_current_dir_path())
+    print("current dir name: " + get_current_dir_name())
+    print("parent dir path: " + get_parent_dir_path())
+    print("parent dir name: " + get_parent_dir_name())
+    print()
+    print("curr dir files:")
+    print(os.listdir(get_current_dir_path()))
+    print()
+    print("parent dir files:")
+    print(os.listdir(get_parent_dir_path()))
 
 
 def my_blanky(arguments):

@@ -12,6 +12,8 @@ script:
   - python setup.py install
   - myblanky -v
   - myblanky --help
+  - ls
+  - myblanky
   - myblanky list
   - mkdir "test"
   - myblanky --blanky=bootstrap --dir=test
