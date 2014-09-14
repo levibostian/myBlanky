@@ -23,10 +23,9 @@ from file_system_util import *
 
 def get_available_blanky_names():
     parent_dir_directories = []
-    for item in os.listdir(get_parent_dir_path()):
+    for item in os.listdir(get_blanky_projects_dir_path()):
         if not os.path.isfile(item):
-            if not item.startswith('.') and item != get_current_dir_name():
-                parent_dir_directories.append(item)
+            parent_dir_directories.append(item)
 
     return parent_dir_directories
 
@@ -60,6 +59,10 @@ def main():
     print("current dir name: " + get_current_dir_name())
     print("parent dir path: " + get_parent_dir_path())
     print("parent dir name: " + get_parent_dir_name())
+    print("blankys dir path: " + get_blanky_projects_dir_path())
+    print()
+    print("blankys here:")
+    print(os.listdir(get_blanky_projects_dir_path()))
     print()
     print("curr dir files:")
     print(os.listdir(get_current_dir_path()))
