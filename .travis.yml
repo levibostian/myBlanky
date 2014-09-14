@@ -13,6 +13,8 @@ script:
   - myblanky -v
   - myblanky --help
   - ls
+  - pwd
+  - ls blankys
   - myblanky
   - myblanky list
   - mkdir "test"
